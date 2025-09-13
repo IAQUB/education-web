@@ -7,7 +7,7 @@
   "dev": "vite",
   "build": "vite build",
   "preview": "vite preview",
-  "deploy": "gh-pages -d dist"
+  "deploy": "npm run build && powershell -Command \"Remove-Item -Recurse -Force docs; Copy-Item -Recurse dist docs; git add .; git commit -m 'update site'; git push\""
 },
   "dependencies": {
     "localforage": "^1.10.0",
